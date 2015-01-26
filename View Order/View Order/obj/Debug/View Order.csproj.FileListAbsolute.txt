@@ -1,0 +1,8 @@
+C:\Users\windows\Desktop\C#\View Order\View Order\bin\Debug\View Order.exe.config
+C:\Users\windows\Desktop\C#\View Order\View Order\bin\Debug\View Order.exe
+C:\Users\windows\Desktop\C#\View Order\View Order\bin\Debug\View Order.pdb
+C:\Users\windows\Desktop\C#\View Order\View Order\obj\Debug\View_Order.Form1.resources
+C:\Users\windows\Desktop\C#\View Order\View Order\obj\Debug\View_Order.Properties.Resources.resources
+C:\Users\windows\Desktop\C#\View Order\View Order\obj\Debug\View Order.csproj.GenerateResource.Cache
+C:\Users\windows\Desktop\C#\View Order\View Order\obj\Debug\View Order.exe
+C:\Users\windows\Desktop\C#\View Order\View Order\obj\Debug\View Order.pdb

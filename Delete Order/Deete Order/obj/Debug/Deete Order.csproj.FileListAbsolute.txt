@@ -1,0 +1,12 @@
+C:\Users\windows\Desktop\C#\Deete Order\Deete Order\bin\Debug\Deete Order.exe.config
+C:\Users\windows\Desktop\C#\Deete Order\Deete Order\bin\Debug\Deete Order.exe
+C:\Users\windows\Desktop\C#\Deete Order\Deete Order\bin\Debug\Deete Order.pdb
+C:\Users\windows\Desktop\C#\Deete Order\Deete Order\obj\Debug\Deete Order.csprojResolveAssemblyReference.cache
+C:\Users\windows\Desktop\C#\Deete Order\Deete Order\obj\Debug\Deete_Order.Form1.resources
+C:\Users\windows\Desktop\C#\Deete Order\Deete Order\obj\Debug\Deete_Order.Properties.Resources.resources
+C:\Users\windows\Desktop\C#\Deete Order\Deete Order\obj\Debug\Deete Order.csproj.GenerateResource.Cache
+C:\Users\windows\Desktop\C#\Deete Order\Deete Order\obj\Debug\Deete Order.exe
+C:\Users\windows\Desktop\C#\Deete Order\Deete Order\obj\Debug\Deete Order.pdb
+C:\Users\windows\Desktop\C#\Delete Order\Deete Order\bin\Debug\Deete Order.exe.config
+C:\Users\windows\Desktop\C#\Delete Order\Deete Order\obj\Debug\Deete Order.exe
+C:\Users\windows\Desktop\C#\Delete Order\Deete Order\obj\Debug\Deete Order.pdb
