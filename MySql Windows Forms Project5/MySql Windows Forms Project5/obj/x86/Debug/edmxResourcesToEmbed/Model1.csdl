@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MySql_Windows_Forms_Project5" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="Model1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="customer_t" EntityType="MySql_Windows_Forms_Project5.customer_t" />
+    <EntitySet Name="order_line_t" EntityType="MySql_Windows_Forms_Project5.order_line_t" />
+    <EntitySet Name="order_t" EntityType="MySql_Windows_Forms_Project5.order_t" />
+    <EntitySet Name="product_t" EntityType="MySql_Windows_Forms_Project5.product_t" />
+    <AssociationSet Name="order_fk" Association="MySql_Windows_Forms_Project5.order_fk">
+      <End Role="customer_t" EntitySet="customer_t" />
+      <End Role="order_t" EntitySet="order_t" />
+    </AssociationSet>
+    <AssociationSet Name="order_line_fk1" Association="MySql_Windows_Forms_Project5.order_line_fk1">
+      <End Role="order_t" EntitySet="order_t" />
+      <End Role="order_line_t" EntitySet="order_line_t" />
+    </AssociationSet>
+    <AssociationSet Name="order_line_fk2" Association="MySql_Windows_Forms_Project5.order_line_fk2">
+      <End Role="product_t" EntitySet="product_t" />
+      <End Role="order_line_t" EntitySet="order_line_t" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="customer_t">
+    <Key>
+      <PropertyRef Name="customer_id" />
+    </Key>
+    <Property Name="customer_id" Type="Int32" Nullable="false" />
+    <Property Name="customer_name" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="customer_address" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="city" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="state" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="postal_code" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="order_t" Relationship="MySql_Windows_Forms_Project5.order_fk" FromRole="customer_t" ToRole="order_t" />
+  </EntityType>
+  <EntityType Name="order_line_t">
+    <Key>
+      <PropertyRef Name="order_id" />
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="order_id" Type="Int32" Nullable="false" />
+    <Property Name="product_id" Type="Int32" Nullable="false" />
+    <Property Name="ordered_quantity" Type="Int32" />
+    <NavigationProperty Name="order_t" Relationship="MySql_Windows_Forms_Project5.order_line_fk1" FromRole="order_line_t" ToRole="order_t" />
+    <NavigationProperty Name="product_t" Relationship="MySql_Windows_Forms_Project5.order_line_fk2" FromRole="order_line_t" ToRole="product_t" />
+  </EntityType>
+  <EntityType Name="order_t">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="Int32" Nullable="false" />
+    <Property Name="order_date" Type="DateTime" />
+    <Property Name="customer_id" Type="Int32" />
+    <NavigationProperty Name="customer_t" Relationship="MySql_Windows_Forms_Project5.order_fk" FromRole="order_t" ToRole="customer_t" />
+    <NavigationProperty Name="order_line_t" Relationship="MySql_Windows_Forms_Project5.order_line_fk1" FromRole="order_t" ToRole="order_line_t" />
+  </EntityType>
+  <EntityType Name="product_t">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="product_id" Type="Int32" Nullable="false" />
+    <Property Name="product_description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="product_finish" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="standard_price" Type="Decimal" />
+    <Property Name="product_line_id" Type="Int32" />
+    <NavigationProperty Name="order_line_t" Relationship="MySql_Windows_Forms_Project5.order_line_fk2" FromRole="product_t" ToRole="order_line_t" />
+  </EntityType>
+  <Association Name="order_fk">
+    <End Role="customer_t" Type="MySql_Windows_Forms_Project5.customer_t" Multiplicity="0..1" />
+    <End Role="order_t" Type="MySql_Windows_Forms_Project5.order_t" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer_t">
+        <PropertyRef Name="customer_id" />
+      </Principal>
+      <Dependent Role="order_t">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="order_line_fk1">
+    <End Role="order_t" Type="MySql_Windows_Forms_Project5.order_t" Multiplicity="1" />
+    <End Role="order_line_t" Type="MySql_Windows_Forms_Project5.order_line_t" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="order_t">
+        <PropertyRef Name="order_id" />
+      </Principal>
+      <Dependent Role="order_line_t">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="order_line_fk2">
+    <End Role="product_t" Type="MySql_Windows_Forms_Project5.product_t" Multiplicity="1" />
+    <End Role="order_line_t" Type="MySql_Windows_Forms_Project5.order_line_t" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product_t">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="order_line_t">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

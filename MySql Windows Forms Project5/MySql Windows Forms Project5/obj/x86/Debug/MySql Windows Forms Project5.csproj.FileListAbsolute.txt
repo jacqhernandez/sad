@@ -1,0 +1,12 @@
+c:\users\kathrine chua\documents\visual studio 2010\Projects\MySql Windows Forms Project5\MySql Windows Forms Project5\bin\Debug\MySql Windows Forms Project5.exe.config
+c:\users\kathrine chua\documents\visual studio 2010\Projects\MySql Windows Forms Project5\MySql Windows Forms Project5\bin\Debug\MySql Windows Forms Project5.exe
+c:\users\kathrine chua\documents\visual studio 2010\Projects\MySql Windows Forms Project5\MySql Windows Forms Project5\bin\Debug\MySql Windows Forms Project5.pdb
+c:\users\kathrine chua\documents\visual studio 2010\Projects\MySql Windows Forms Project5\MySql Windows Forms Project5\obj\x86\Debug\MySql_Windows_Forms_Project5.frmMain.resources
+c:\users\kathrine chua\documents\visual studio 2010\Projects\MySql Windows Forms Project5\MySql Windows Forms Project5\obj\x86\Debug\MySql_Windows_Forms_Project5.Properties.Resources.resources
+c:\users\kathrine chua\documents\visual studio 2010\Projects\MySql Windows Forms Project5\MySql Windows Forms Project5\obj\x86\Debug\MySql Windows Forms Project5.csproj.GenerateResource.Cache
+c:\users\kathrine chua\documents\visual studio 2010\Projects\MySql Windows Forms Project5\MySql Windows Forms Project5\obj\x86\Debug\MySql Windows Forms Project5.exe
+c:\users\kathrine chua\documents\visual studio 2010\Projects\MySql Windows Forms Project5\MySql Windows Forms Project5\obj\x86\Debug\MySql Windows Forms Project5.pdb
+c:\users\kathrine chua\documents\visual studio 2010\Projects\MySql Windows Forms Project5\MySql Windows Forms Project5\obj\x86\Debug\MySql_Windows_Forms_Project5.frmcustomer_t.resources
+c:\users\kathrine chua\documents\visual studio 2010\Projects\MySql Windows Forms Project5\MySql Windows Forms Project5\obj\x86\Debug\MySql_Windows_Forms_Project5.frmorder_line_t.resources
+c:\users\kathrine chua\documents\visual studio 2010\Projects\MySql Windows Forms Project5\MySql Windows Forms Project5\obj\x86\Debug\MySql_Windows_Forms_Project5.frmorder_t.resources
+c:\users\kathrine chua\documents\visual studio 2010\Projects\MySql Windows Forms Project5\MySql Windows Forms Project5\obj\x86\Debug\MySql_Windows_Forms_Project5.frmproduct_t.resources

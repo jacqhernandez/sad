@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1Model.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="Model1ModelStoreContainer">
+    <EntitySet Name="customer_t" EntityType="Model1Model.Store.customer_t" store:Type="Tables" Schema="pinevalley" />
+    <EntitySet Name="order_line_t" EntityType="Model1Model.Store.order_line_t" store:Type="Tables" Schema="pinevalley" />
+    <EntitySet Name="order_t" EntityType="Model1Model.Store.order_t" store:Type="Tables" Schema="pinevalley" />
+    <EntitySet Name="product_t" EntityType="Model1Model.Store.product_t" store:Type="Tables" Schema="pinevalley" />
+    <AssociationSet Name="order_fk" Association="Model1Model.Store.order_fk">
+      <End Role="customer_t" EntitySet="customer_t" />
+      <End Role="order_t" EntitySet="order_t" />
+    </AssociationSet>
+    <AssociationSet Name="order_line_fk1" Association="Model1Model.Store.order_line_fk1">
+      <End Role="order_t" EntitySet="order_t" />
+      <End Role="order_line_t" EntitySet="order_line_t" />
+    </AssociationSet>
+    <AssociationSet Name="order_line_fk2" Association="Model1Model.Store.order_line_fk2">
+      <End Role="product_t" EntitySet="product_t" />
+      <End Role="order_line_t" EntitySet="order_line_t" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="customer_t">
+    <Key>
+      <PropertyRef Name="customer_id" />
+    </Key>
+    <Property Name="customer_id" Type="int" Nullable="false" />
+    <Property Name="customer_name" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="customer_address" Type="varchar" MaxLength="30" />
+    <Property Name="city" Type="varchar" MaxLength="20" />
+    <Property Name="state" Type="varchar" MaxLength="2" />
+    <Property Name="postal_code" Type="varchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="order_line_t">
+    <Key>
+      <PropertyRef Name="order_id" />
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="order_id" Type="int" Nullable="false" />
+    <Property Name="product_id" Type="int" Nullable="false" />
+    <Property Name="ordered_quantity" Type="int" />
+  </EntityType>
+  <EntityType Name="order_t">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="int" Nullable="false" />
+    <Property Name="order_date" Type="date" />
+    <Property Name="customer_id" Type="int" />
+  </EntityType>
+  <EntityType Name="product_t">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="product_id" Type="int" Nullable="false" />
+    <Property Name="product_description" Type="varchar" MaxLength="50" />
+    <Property Name="product_finish" Type="varchar" MaxLength="20" />
+    <Property Name="standard_price" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="product_line_id" Type="int" />
+  </EntityType>
+  <Association Name="order_fk">
+    <End Role="customer_t" Type="Model1Model.Store.customer_t" Multiplicity="0..1" />
+    <End Role="order_t" Type="Model1Model.Store.order_t" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer_t">
+        <PropertyRef Name="customer_id" />
+      </Principal>
+      <Dependent Role="order_t">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="order_line_fk1">
+    <End Role="order_t" Type="Model1Model.Store.order_t" Multiplicity="1" />
+    <End Role="order_line_t" Type="Model1Model.Store.order_line_t" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="order_t">
+        <PropertyRef Name="order_id" />
+      </Principal>
+      <Dependent Role="order_line_t">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="order_line_fk2">
+    <End Role="product_t" Type="Model1Model.Store.product_t" Multiplicity="1" />
+    <End Role="order_line_t" Type="Model1Model.Store.order_line_t" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product_t">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="order_line_t">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1ModelStoreContainer" CdmEntityContainer="Model1Entities">
+    <EntitySetMapping Name="customer_t">
+      <EntityTypeMapping TypeName="MySql_Windows_Forms_Project5.customer_t">
+        <MappingFragment StoreEntitySet="customer_t">
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+          <ScalarProperty Name="customer_address" ColumnName="customer_address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="postal_code" ColumnName="postal_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="order_line_t">
+      <EntityTypeMapping TypeName="MySql_Windows_Forms_Project5.order_line_t">
+        <MappingFragment StoreEntitySet="order_line_t">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="ordered_quantity" ColumnName="ordered_quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="order_t">
+      <EntityTypeMapping TypeName="MySql_Windows_Forms_Project5.order_t">
+        <MappingFragment StoreEntitySet="order_t">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product_t">
+      <EntityTypeMapping TypeName="MySql_Windows_Forms_Project5.product_t">
+        <MappingFragment StoreEntitySet="product_t">
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="product_description" ColumnName="product_description" />
+          <ScalarProperty Name="product_finish" ColumnName="product_finish" />
+          <ScalarProperty Name="standard_price" ColumnName="standard_price" />
+          <ScalarProperty Name="product_line_id" ColumnName="product_line_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
